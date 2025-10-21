@@ -1,75 +1,42 @@
-# React + TypeScript + Vite
+# DevelopmentBooks — Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Brief frontend application for the DevelopmentBooks project. Single-page app for viewing development-related books. Intended to be used together with a backend API that provides book data and basket calculation.
+No tests here because there is no functionalities to be tested. All the logic happens in the backend.
 
-Currently, two official plugins are available:
+## Features
+- Books page
+- Adding books to basket
+- Auto update basket price
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Prerequisites
+- Node.js (LTS recommended, e.g. 18+)
+- npm or yarn
+- The backend at https://github.com/ActuallyBadoura/2025-CCE-E-DEV-020-DevelopmentBooks
 
-## React Compiler
+## Install
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+1. Clone the repository
+  ```
+  git clone https://github.com/ActuallyBadoura/2025-CCE-E-DEV-020-DevelopmentBooks-frontend developmentbooks-frontend
+  cd developmentbooks-frontend
+  ```
 
-Note: This will impact Vite dev & build performances.
+2. Install dependencies
+  ```
+  # using npm
+  npm install
 
-## Expanding the ESLint configuration
+  # or using yarn
+  yarn install
+  ```
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Run (development)
+Start the development server (hot reload):
 ```
+# npm
+npm run dev
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+# or yarn
+yarn dev
 ```
+Default dev server usually runs on http://localhost:3000 or http://localhost:5173 depending on the toolchain. Check console output.
